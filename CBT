@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certified Brainbox Tutorial - Class Booking & Exam Prep</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Lighter gray for background */
+        }
+        .hero-section {
+            position: relative;
+            height: 90vh;
+            overflow: hidden;
+        }
+        #hero-video { #ff4caf50
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            transform: translateX(-50%) translateY(-50%);
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(10, 37, 64, 0.7);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Animation styles */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-blue-600 flex items-center">
+                <img src="http://googleusercontent.com/file_content/1" alt="CBT Logo" class="h-10 w-10 mr-2 rounded-full">
+                Certified Brainbox Tutorial
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Home</a>
+                <a href="#courses" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Courses</a>
+                <a href="#past-questions" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Past Questions</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">About Us</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#" class="text-blue-600 hover:bg-blue-50 px-4 py-2 rounded-full font-medium transition duration-300">Log In</a>
+                <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg">Sign Up</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-2xl text-blue-600">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+            <a href="#" class="block py-2 text-gray-600 hover:text-blue-600">Home</a>
+            <a href="#courses" class="block py-2 text-gray-600 hover:text-blue-600">Courses</a>
+            <a href="#past-questions" class="block py-2 text-gray-600 hover:text-blue-600">Past Questions</a>
+            <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600">About Us</a>
+            <div class="mt-4 border-t pt-4">
+                 <a href="#" class="block text-center w-full py-2 text-blue-600 hover:bg-blue-50 rounded-full font-medium">Log In</a>
+                <a href="#" class="block text-center w-full mt-2 bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 shadow-lg">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Video Background -->
+        <section class="hero-section text-white">
+            <video autoplay muted loop playsinline id="hero-video">
+                <source src="http://googleusercontent.com/file_content/4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content container mx-auto px-6 text-center flex flex-col justify-center h-full">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-up">Achieve Exam Success with Certified Brainbox Tutorial</h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto animate-fade-in-up" style="animation-delay: 0.3s;">Join our intensive classes and gain access to a vast library of resources to score high in your exams.</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in-up" style="animation-delay: 0.6s;">
+                    <a href="#utme-announcement" class="bg-yellow-400 text-blue-900 px-8 py-3 rounded-full text-lg font-semibold hover:bg-yellow-300 transition duration-300 shadow-xl transform hover:scale-105 w-full sm:w-auto">UNIBADAN POST-UTME!</a>
+                    <a href="#courses" class="bg-white text-blue-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-50 transition duration-300 w-full sm:w-auto transform hover:scale-105">View Other Courses</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Post-UTME Announcement Section -->
+        <section id="utme-announcement" class="py-20 bg-blue-50">
+            <div class="container mx-auto px-6">
+                <div class="bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col md:flex-row">
+                    <div class="md:w-1/2 animated-item fade-in-up">
+                        <img src="http://googleusercontent.com/file_content/1" alt="UNIBADAN POST-UTME Special Class Flyer" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center animated-item fade-in-up" style="transition-delay: 0.2s;">
+                        <h2 class="text-3xl font-bold text-blue-800 mb-4">UNIBADAN POST-UTME Special Class</h2>
+                        <p class="text-yellow-600 font-semibold text-lg mb-4"><i class="fas fa-fire mr-2"></i>Intensive Classes Ongoing Now!</p>
+                        <p class="text-gray-600 mb-6">Don't miss out on this opportunity to prepare for your UNIBADAN Post-UTME. Our goal is to help you score <span class="font-bold text-blue-800">nothing less than 80/100</span>. Join our special classes today!</p>
+                        <div class="mb-6">
+                            <p class="font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i><span class="font-bold">Location:</span> St Thomas Basic School II, Agbowo, Ibadan.</p>
+                        </div>
+                        <div class="space-y-4">
+                             <a href="tel:09138503832" class="w-full text-center bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition duration-300 shadow-lg transform hover:scale-105 inline-block">Call to Register: 09138503832</a>
+                             <a href="tel:07062976410" class="w-full text-center bg-gray-700 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-800 transition duration-300 shadow-lg transform hover:scale-105 inline-block">Enquiries: 07062976410</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Features Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                    <div class="feature-item animated-item fade-in-up">
+                        <div class="bg-blue-100 text-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i class="fas fa-chalkboard-teacher text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Expert Tutors</h3>
+                        <p class="text-gray-600">Learn from the best. Our instructors are experienced professionals passionate about teaching.</p>
+                    </div>
+                    <div class="feature-item animated-item fade-in-up">
+                        <div class="bg-blue-100 text-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i class="fas fa-book-open text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Comprehensive Resources</h3>
+                        <p class="text-gray-600">Practice with thousands of past questions and detailed answers to ace your exams.</p>
+                    </div>
+                    <div class="feature-item animated-item fade-in-up">
+                        <div class="bg-blue-100 text-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i class="fas fa-check-circle text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Proven Results</h3>
+                        <p class="text-gray-600">Our students consistently achieve top scores in POST-UTME, WAEC, and JAMB.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Courses Section -->
+        <section id="courses" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-2 animated-item fade-in-up">Other Available Classes</h2>
+                <p class="text-center text-gray-600 mb-12 animated-item fade-in-up">We offer a range of classes to meet your academic needs.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Course Card 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 animated-item fade-in-up">
+                        <img src="http://googleusercontent.com/file_content/3" alt="Classroom" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">JAMB & WAEC Prep Course</h3>
+                            <p class="text-gray-600 mb-4">Comprehensive tutorials covering all key subjects.</p>
+                             <div class="flex justify-between items-center mb-4">
+                                <span class="text-sm text-gray-500"><i class="fas fa-book mr-1"></i> Multiple Subjects</span>
+                                <span class="text-sm text-gray-500"><i class="fas fa-clock mr-1"></i> Flexible</span>
+                            </div>
+                            <button class="w-full bg-blue-600 text-white py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">Learn More</button>
+                        </div>
+                    </div>
+                    <!-- Course Card 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 animated-item fade-in-up">
+                        <img src="http://googleusercontent.com/file_content/2" alt="Welcome image" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Personalized Tutoring</h3>
+                            <p class="text-gray-600 mb-4">One-on-one sessions tailored to your specific needs.</p>
+                             <div class="flex justify-between items-center mb-4">
+                                <span class="text-sm text-gray-500"><i class="fas fa-user mr-1"></i> Individual Focus</span>
+                                <span class="text-sm text-gray-500"><i class="fas fa-calendar-check mr-1"></i> Book a Slot</span>
+                            </div>
+                            <button class="w-full bg-blue-600 text-white py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">Get Started</button>
+                        </div>
+                    </div>
+                     <!-- Course Card Placeholder -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300 animated-item fade-in-up">
+                        <div class="p-6 border-4 border-dashed border-gray-200 h-full flex flex-col justify-center items-center text-center">
+                             <div class="text-blue-300 mb-4">
+                                <i class="fas fa-graduation-cap text-5xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-gray-500">More Courses Coming Soon</h3>
+                            <p class="text-gray-400">We are always expanding our offerings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Past Questions Section -->
+        <section id="past-questions" class="py-20 bg-white">
+            <div class="container mx-auto px-6 animated-item fade-in-up">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold mb-2">Ace Your Exams with Our Q&A Bank</h2>
+                    <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Search through thousands of official past questions from WAEC, NECO, JAMB, and more. Get detailed, step-by-step solutions.</p>
+                    <div class="max-w-xl mx-auto">
+                        <div class="relative">
+                            <input type="text" placeholder="Search for a subject or exam..." class="w-full py-4 px-6 rounded-full border-2 border-gray-200 focus:outline-none focus:border-blue-500 transition duration-300 shadow-inner">
+                            <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-600 text-white px-6 py-2.5 rounded-full hover:bg-blue-700 transition duration-300">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About/Testimonial Section -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold mb-12 animated-item fade-in-up">Why Students Trust Certified Brainbox Tutorial</h2>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2 animated-item fade-in-up">
+                        <img src="http://googleusercontent.com/file_content/3" alt="Students in a classroom" class="rounded-lg shadow-2xl w-full">
+                    </div>
+                    <div class="md:w-1/2 animated-item fade-in-up">
+                        <div class="space-y-6">
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <p class="text-gray-600 mb-4">"The POST-UTME class was a game-changer. The tutors at CBT are simply the best. I smashed my exam!"</p>
+                                <div class="flex items-center">
+                                    <img src="https://placehold.co/50x50/e2e8f0/333333?text=AA" alt="Student Ade" class="w-12 h-12 rounded-full mr-4">
+                                    <div>
+                                        <p class="font-bold">Adeola A.</p>
+                                        <p class="text-sm text-gray-500">UNIBADAN Aspirant</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                <p class="text-gray-600 mb-4">"I used the past questions bank for my WAEC prep. The platform is so easy to use and the solutions are very clear."</p>
+                                <div class="flex items-center">
+                                    <img src="https://placehold.co/50x50/e2e8f0/333333?text=TO" alt="Student Tobi" class="w-12 h-12 rounded-full mr-4">
+                                    <div>
+                                        <p class="font-bold">Tobi O.</p>
+                                        <p class="text-sm text-gray-500">SS3 Student</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="bg-blue-600 text-white py-20">
+            <div class="container mx-auto px-6 text-center animated-item fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Success Story?</h2>
+                <p class="text-lg text-blue-100 mb-8">Create your account today and take the first step towards academic excellence.</p>
+                <a href="#" class="bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-xl transform hover:scale-105 inline-block">Create a Free Account</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <img src="http://googleusercontent.com/file_content/1" alt="CBT Logo" class="h-8 w-8 mr-2 rounded-full bg-white p-1">
+                        Certified Brainbox Tutorial
+                    </h3>
+                    <p class="text-gray-400">Your partner in academic excellence.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul>
+                        <li class="mb-2"><a href="#courses" class="text-gray-400 hover:text-white">Courses</a></li>
+                        <li class="mb-2"><a href="#past-questions" class="text-gray-400 hover:text-white">Past Questions</a></li>
+                        <li class="mb-2"><a href="#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">Become a Tutor</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                     <p class="text-gray-400 mb-2"><i class="fab fa-whatsapp mr-2"></i> 09138503832</p>
+                     <p class="text-gray-400"><i class="fas fa-phone mr-2"></i> 07062976410</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white text-2xl"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500">
+                <p>&copy; 2024 Certified Brainbox Tutorial. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // JavaScript for scroll animations
+        const animatedItems = document.querySelectorAll('.animated-item');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 
+        });
+
+        animatedItems.forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+
+</body>
+</html>
+
+ 
